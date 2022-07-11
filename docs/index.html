@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@600&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  </head>
+
+  <body>
+    <div id="top" class="top">
+    </div>
+  <div id="body">
+    <div id="main-bg" class="container">
+      <div class="left"></div>
+      <div id="main" class="main">
+        <div id="hero">
+          <h1 id="hero-text">Recognize, Practice, Perform.</h1>
+          <h2>Reach your dream rank<br>
+            with Solar_Hound
+          </h2>
+          <p>Tired of not knowing why you're stuck?<br>
+            Book a session with Overwatch's best Live-Coach.
+          </p>
+          <button class="book-button" onclick="overlay_on()">Book now!</button>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <div id="story-container" class="container">
+      <div class="left"></div>
+      <div id="story" class="main">
+        <div id="story-content" class="story">
+          <h1 id="story-head">Confident.</h1>
+          <h2 id="story-sub">Going into the session -</h2>
+          <p id="story-text">
+            You can be confident that you will begin your transformation toward your best self.<br>
+            Beforehand all of your mistakes are carefully studied - <br>
+            <br>
+            to hand-craft the most impactful session possible.
+          </p>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <div id="recognize-container" class="container">
+      <div class="left"></div>
+      <div id="recognize" class="main">
+        <div id="recognize-content">
+          <h1 id="recognize-head">Recognize.</h1>
+          <h2 id="recognize-sub">Starting the session -</h2>
+          <p id="recognize-text">
+            You will learn to recognize key mistakes.<br>
+            Not only what the mistake is, but also why it matters, how to prevent it.<br>
+            What questions to ask yourself.<br>
+            <br>
+            Propelling your understanding to a new level.
+          </p>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <div id="practice-container" class="container">
+      <div class="left"></div>
+      <div id="practice" class="main">
+        <div id="practice-content">
+          <h1 id="practice-head">Practice.</h1>
+          <h2 id="practice-sub">During the session -</h2>
+          <p id="practice-text">
+            Ready to apply your new-found knowledge.<br>
+            <br>
+            You will now load up into the game.<br>
+            Your coach spectating you live - <br>
+            Reminding you of what you're working on.<br>
+            <br>
+            Getting the most perfect practice possible.<br>
+            <br>
+            After each game - a small post-game review session takes place.<br>
+            <strong>Highlighting</strong> each pivotal decision.<br>
+          </p>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <div id="perform-container" class="container">
+      <div class="left"></div>
+      <div id="perform" class="main">
+        <div id="perform-content">
+          <h1 id="perform-head">Perform.</h1>
+          <h2 id="perform-sub">Ending the session -</h2>
+          <p id="perform-text">
+            Ready to apply your new-found knowledge.<br>
+            You will get additional feedback catered to your level of play.<br>
+            <br>
+            
+          </p>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <div id="testimonials-container" class="container">
+      <div id="testimonials" class="main">
+        <div id="perform-content">
+          <h1 id="testimonials">Testimonials</h1>
+        </div>
+      </div>
+    </div>
+    <div class="right"></div>
+
+  </div>
+  </body>
+  <div id="overlay">
+    <div id="info">
+      <div id="about">
+        <h1>Coach Solarhound</h1>
+        <h2>Transform Today.</h2>
+        <br>
+        <p>
+          I have been working hard to create the best possible training regiment for Overwatch.
+          With over 6 years of experience in the game. Working my hardest to become the best coach I can be.<br>
+          <br>
+          Within this I've found the are where I excell: Live-Coaching. <br>
+          Currently, I can confidently call myself 
+        </p>
+      </div>
+      <input type="hidden" id="select-type">
+
+    </div>
+    <div id="calendar">
+      <div id="prev-month" onselectstart="return false" onclick="prev_month()"><</div>
+      <div id="month" onselectstart="return false">Month</div>
+      <div id="next-month" onselectstart="return false" onclick="next_month()">></div>
+      <div id="sunday" class="day" onselectstart="return false">Sun</div>
+      <div id="monday" class="day" onselectstart="return false">Mon</div>
+      <div id="tuesday" class="day" onselectstart="return false">Tue</div>
+      <div id="wednesday" class="day" onselectstart="return false">Wed</div>
+      <div id="thursday" class="day" onselectstart="return false">Thur</div>
+      <div id="friday" class="day" onselectstart="return false">Fri</div>
+      <div id="saturday" class="day" onselectstart="return false">Sat</div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</html>
