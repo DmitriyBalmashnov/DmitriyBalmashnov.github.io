@@ -98,6 +98,15 @@ button {
     background-image: url("Tracer-orangewhite.png");
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
+
+}
+
+#story-container{
+    background-image: url("REINSITE.png");
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;
 }
 
 #recognize-container {
