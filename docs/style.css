@@ -1,12 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    height: 400vh;
+    height: auto;
     margin: 0;
     padding: 0;
 }
 
 #body {
     background-color: #f0f0F0;
-    height: 400vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     grid-gap: 0px 15px;
@@ -22,12 +26,18 @@ body {
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
-button {
+button, .book-ref {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#body button:hover{
-    cursor:pointer;
+#body button:hover {
+    cursor: pointer;
+    background-color: #dfdfdf;
+    color: #252525;
+}
+
+.book-ref:hover {
+    cursor: pointer;
     background-color: #dfdfdf;
     color: #252525;
 }
@@ -41,7 +51,7 @@ button {
 }
 
 .container {
-    flex-basis: 50vh;
+    flex-basis: 65vh;
 }
 
 .container:nth-child(odd) {
@@ -70,6 +80,14 @@ button {
     filter: blur(10px);
 }
 
+.text-white {
+    color: #dfdfdf;
+}
+
+.about-description {
+    display: none;
+}
+
 #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
@@ -87,6 +105,10 @@ button {
     flex-wrap: wrap;
 }
 
+.vert-container {
+    flex-direction: column;
+}
+
 .main > * {
     margin: auto 10px;
     width: 500px;
@@ -101,26 +123,11 @@ button {
     background-size: cover;
 }
 
-.day-selector > label{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.time-select-list {
-    display: none;
-}
-
-
-
-
-
 #story-container{
     background-image: url("REINSITE.png");
     background-repeat: no-repeat;
-    background-position: auto;
-    background-size: cover;
+    background-position: left;
+    background-size: auto 100%;
 }
 
 #recognize-container {
@@ -144,12 +151,20 @@ form > label {
     overflow: hidden;
 }
 
+.overlay-item {
+    width: 22rem;
+    height: 25rem;
+    padding: 7px;
+}
+
 #calendar {
     display: grid;
     background-color: #373737;
-    grid-template: repeat(8, 50px)/ repeat(7, 50px);
+    grid-template: repeat(8, 3rem)/ repeat(7, 3rem);
     grid-gap: 2px;
     padding: 7px;
+    width: 22rem;
+    height: 25rem;
 }
 
 #month {
@@ -157,24 +172,134 @@ form > label {
     text-align: center;
 }
 
-button {
+button, .book-ref {
     padding: 3px 20px;
     flex-basis: 0%;
     flex-grow: 3;
     color: #dfdfdf;
     background-color: #252525;
     border: none;
+    text-decoration: none;
+}
+#book-now {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.day-radio {
+.booking-picker {
+    background-color: #373737;
+    height: 28rem;
+    width: 30rem;
+
+    margin: 2rem;
+    padding:  7px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: darkgray 3px 4px 10px;
+}
+
+.text-peach {
+    color: peachpuff;
+}
+
+.text-orange {
+    color: #ff6e2b;
+}
+
+.booking-picker > ul {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 60%;
+    list-style-type: square;
+}
+
+.booking-picker > h1 {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.booking-picker > h2 {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-picker > button {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 20%;
+    height: 4rem;
+    background-color: #ffb363;#6caeaa;
+    color: #252525;
+    font-weight: bolder;
+}
+
+.day-selector {
+    transition: all .4s;
+}
+
+.day-selector, .calendar-nav-item{
+    color: #373737;
+    background-color: #252525;
+}
+
+.day-enabled, .calendar-nav-item{
+    color: #ff6e2b;
+}
+
+.calendar-nav-item, .day-selector>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-select-item {
+    width: 8rem;
+    padding: .5rem 0px;
+}
+
+.time-select-list {
     display: none;
+    position: relative;
+    left: -2.5rem;
+    top: -1.2rem;
+}
+
+.day-selected, .time-select-item {
+    background-color: #dfdfdf;
+    color: #252525;
+}
+
+.day-selected > .time-select-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-select-item:hover {
+    background-color: #656565;
+    color: #dfdfdf;
+}
+
+.close-button {
+    flex-grow: 0;
+    height: 30px;
+    width: 30px;
+    margin: 1rem;
 }
 
 #info {
     display: flex;
     flex-direction: column;
-    width: 362px;
-    height: 414px;
+    width: 22rem;
+    height: 25rem;
     padding: 7px;
     background-color: #373737;
 }
@@ -202,28 +327,68 @@ button {
     color: #dfdfdf;
 }
 
-#calendar > .active:hover{
-    transition: background-color .4s;
-    background-color: #dfdfdf;
+.hori-container {
+    display: flex;
+    flex-direction: row;
 }
 
-.down-arrow{
+.down-arrow {
     left: 50%;
     transform: translateY(0%) rotate(45deg);
-    
-                  opacity: 0;
+
+    opacity: 0;
+}
+
+@keyframes scrolldown {
+  0%{
+      transform: translateY(20%) rotate(45deg);
+      opacity: 0.7;
   }
-  @keyframes scrolldown {
-              0%{
-                  transform: translateY(20%) rotate(45deg);
-                  opacity: 0.7;
-              }
-              50%{
-                  transform: translateY(0%) rotate(45deg);
-                  opacity: 0.2;
-              }
-              100%{
-                  transform: translateY(20%) rotate(45deg);
-                  opacity: 0.7;
-              }
-          }
+  50%{
+      transform: translateY(0%) rotate(45deg);
+      opacity: 0.2;
+  }
+  100%{
+      transform: translateY(20%) rotate(45deg);
+      opacity: 0.7;
+  }
+}
+#queue-container {
+    background-color: #252525;
+    justify-content: space-evenly;
+}
+
+#queue {
+    background: linear-gradient(37deg, rgb(217, 92, 35), rgb(255, 110, 43), rgb(217, 92, 35));
+    height: 28rem;
+    width: 30rem;
+    margin: 1rem 1rem;
+    border-radius: .2rem;
+}
+
+#queue-form {
+    background: linear-gradient(37deg, rgb(217, 92, 35), rgb(255, 110, 43), rgb(217, 92, 35));
+    background-color: #ff6e2b;
+
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem;
+    border-radius: .2rem;
+    box-shadow: #ff963991 1px 2px 5px;
+    height: 28rem;
+    width: 30rem;
+}
+
+#queue-form > * {
+    margin: .5rem .5rem;
+    flex-grow: 1;
+    border-width: 0px;
+}
+
+#queue-form > input {
+    background-color: #373737;
+    color: #dfdfdf;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-left: .5rem;
+}

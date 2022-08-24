@@ -6,7 +6,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@600&display=swap" rel="stylesheet"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
   </head>
 
   <body>
@@ -24,7 +23,7 @@
           <p>Tired of not knowing why you're stuck?<br>
             Book a session with Overwatch's best Live-Coach.
           </p>
-          <button class="book-button" onclick="overlay_on()">Book now!</button>
+          <a class="book-ref" href="#book-now">Book now!</a>
         </div>
       </div>
       <div class="right"></div>
@@ -103,11 +102,111 @@
             Ready to apply your new-found knowledge.<br>
             You will get additional feedback catered to your level of play.<br>
             <br>
-            
+            Getting a personal improvement plan<br>
+            Allowing you to gradually push your way to the top 
           </p>
         </div>
       </div>
       <div class="right"></div>
+    </div>
+
+    <div id="book-now" class="container text-peach">
+      <div id="book-live-stream" class="booking-picker">
+        <h1>On-Stream Live Coaching</h1>
+        <ul class="text-white">
+          <li>PC ONLY</li>
+          <li>3 games pre-reviewed</li>
+          <li>1.5 hours of personalized coaching</li>
+          <li>On stream </li>
+          <li>Steering you live in game</li>
+          <li>Post-game review</li>
+          <li>Post-session improvement plan</li>
+        </ul>
+        <h2>&euro; 40</h2>
+        <button onclick="overlay_on('about-live-stream')">Book now!</button>
+      </div>
+
+      <div id="book-live-private" class="booking-picker">
+        <h1>Private Live Coaching</h1>
+        <ul class="text-white">
+          <li>PC ONLY</li>
+          <li>3 games pre-reviewed</li>
+          <li>1.5 hours of personalized coaching</li>
+          <li>Off stream, private</li>
+          <li>Steering you live in game</li>
+          <li>Post-game review</li>
+          <li>Post-session improvement plan</li>
+        </ul>
+        <h2>&euro; 60</h2>
+        <button onclick="overlay_on('about-live-private')">Book now!</button>
+      </div>
+
+      <div id="book-replay-stream" class="booking-picker">
+        <h1>On-Stream Replay Coaching</h1>
+        <ul class="text-white">
+          <li>3 games pre-reviewd</li>
+          <li>1.5 hours of replay viewing</li>
+          <li>on stream</li>
+          <li>learn to replay review yourself</li>
+          <li>Post-session improvement plan</li>
+        </ul>
+        <h2>&euro; 40</h2>
+        <button onclick="overlay_on('about-replay-stream')">Book now!</button>
+      </div>
+
+      <div id="book-replay-private" class="booking-picker">
+        <h1>Private Replay Coaching</h1>
+        <ul class="text-white">
+          <li>3 games pre-reviewd</li>
+          <li>1.5 hours of replay viewing</li>
+          <li>Off stream, private</li>
+          <li>learn to replay review yourself</li>
+          <li>Post-session improvement plan</li>
+        </ul>
+        <h2>&euro; 60</h2>
+        <button onclick="overlay_on('about-replay-private')">Book now!</button>
+      </div>
+
+      <div id="book-free-session" class="booking-picker">
+        <h1>Streamed Free session</h1>
+        <ul class="text-white">
+          <li>Half-hour session</li>
+          <li>Single game</li>
+          <li>Live-coaching or replay</li>  
+        </ul>
+        <h2>Free</h2>
+        <button>Queue now!</button>
+      </div>
+    </div>
+
+    <div id="queue-container" class="container">
+      <div id="queue" class="queue">
+        <div>
+          <h2> </h2>
+          <div id="queue-is-active">
+            <div id="circle">
+            </div>
+            <span id="queue-active-text"></span>
+            <a href="twitch-link"></a>
+          </div>
+          <div id="queue-frame">
+
+          </div>
+          <span id="queue-inactive-count">inactive users queued: </span>
+        </div>
+
+        <div>
+          
+        </div>
+      </div>
+      <form id="queue-form" class="">
+        <h1>Join the coaching queue</h1>
+        <label for="discord-tag">Discord tag</label>
+        <input type="text" name="discord-tag" placeholder="DiscordTag#0000">
+        <label for="twitch-tag">Twitch Username</label>
+        <input type="text" name="twitch-tag" placeholder="Twitch Username">
+        <input type="submit" name="submit" value="Join Queue" onclick="return false" onsubmit="return false">
+      </form>
     </div>
 
     <div id="testimonials-container" class="container">
@@ -121,34 +220,101 @@
 
   </div>
   </body>
-  <div id="overlay">
-    <div id="info">
-      <div id="about">
-        <h1>Coach Solarhound</h1>
-        <h2>Transform Today.</h2>
-        <br>
-        <p>
-          I have been working hard to create the best possible training regiment for Overwatch.
-          With over 6 years of experience in the game. Working my hardest to become the best coach I can be.<br>
+  <div id="overlay" class="vert-container">
+    <button class="close-button" onclick="overlay_off">x</button>
+    <div class="hori-container">
+      <div id="info">
+        <div id="about">
+          <h1>Coach Solarhound</h1>
+          <h2>Transform Today.</h2>
           <br>
-          Within this I've found the are where I excell: Live-Coaching. <br>
-          Currently, I can confidently call myself 
-        </p>
-      </div>
-      <input type="hidden" id="select-type">
+          
+          <div id="about-live-stream" class="about-description">
+            <p>
+              Live coaching is my specialty.<br>
+              <br>
+              I can confidently call myself the best live coach currently - for any player under masters <br>
+              <br>
+              For the people who are looking for a truly personalized experience, there is no better place go. <br>
+              <br>
+              By combination of pre-review, live guidance and post session plans. <br>
+              You are going to improve as a player - gaining insight, wisdom, knowledge. <br>
+              <br>
+              I find it extremely important to know how it "feels" to play properly.<br>
+              Because once you have felt it, you will know how to replicate it<br>
+              <br>
+              much easier than watching someone else do it, or being corrected in retrospect.
+            </p>
+          </div>
+          
+          <div id="about-live-private" class="about-description">
+            <p>
+              Live coaching is my specialty.<br>
+              <br>
+              I can confidently call myself the best live coach currently - for any player under masters <br>
+              <br>
+              For the people who are looking for a truly personalized experience, there is no better place go. <br>
+              <br>
+              By combination of pre-review, live guidance and post session plans. <br>
+              You are going to improve as a player - gaining insight, wisdom, knowledge. <br>
+              <br>
+              I find it extremely important to know how it "feels" to play properly.<br>
+              Because once you have felt it, you will know how to replicate it<br>
+              <br>
+              much easier than watching someone else do it, or being corrected in retrospect.
+            </p>
+          </div>
+          
+          <div id="about-replay-stream" class="about-description">
+            <p>
+              Being able to review ones own replays is an incredibly important skill to learn.<br>
+              <br>
+              Sitting together we discuss how to identify key learning opportunities in retrospect.<br>
+              How to build upon these moments, and what a trajectory could look like in the future.<br>
+              <br>
+              We will also look at some higher-level games, and compare their approach to the game within the confines of specific concepts.<br>
+              Learning to identify what the players of high caliber are favouring, and looking how applicable it is to our situation.<br>
+              <br>
+              On our way to becoming a self-suficient, self-improving player.
+            </p>
+          </div>
 
+          <div id="about-replay-private" class="about-description">
+            <p>
+              Being able to review ones own replays is an incredibly important skill to learn.<br>
+              <br>
+              Sitting together we discuss how to identify key learning opportunities in retrospect.<br>
+              How to build upon these moments, and what a trajectory could look like in the future.<br>
+              <br>
+              We will also look at some higher-level games, and compare their approach to the game within the confines of specific concepts.<br>
+              Learning to identify what the players of high caliber are favouring, and looking how applicable it is to our situation.<br>
+              <br>
+              On our way to becoming a self-suficient, self-improving player.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="calendar">
+        <div id="prev-month" class="calendar-nav-item"onselectstart="return false" onclick="prev_month()"><</div>
+        <div id="month" class="calendar-nav-item"onselectstart="return false">Month</div>
+        <div id="next-month" class="calendar-nav-item"onselectstart="return false" onclick="next_month()">></div>
+        <div id="sunday" class="day calendar-nav-item" onselectstart="return false">Sun</div>
+        <div id="monday" class="day calendar-nav-item" onselectstart="return false">Mon</div>
+        <div id="tuesday" class="day calendar-nav-item" onselectstart="return false">Tue</div>
+        <div id="wednesday" class="day calendar-nav-item" onselectstart="return false">Wed</div>
+        <div id="thursday" class="day calendar-nav-item" onselectstart="return false">Thur</div>
+        <div id="friday" class="day calendar-nav-item" onselectstart="return false">Fri</div>
+        <div id="saturday" class="day calendar-nav-item" onselectstart="return false">Sat</div>
+      </div>
     </div>
-    <div id="calendar">
-      <div id="prev-month" onselectstart="return false" onclick="prev_month()"><</div>
-      <div id="month" onselectstart="return false">Month</div>
-      <div id="next-month" onselectstart="return false" onclick="next_month()">></div>
-      <div id="sunday" class="day" onselectstart="return false">Sun</div>
-      <div id="monday" class="day" onselectstart="return false">Mon</div>
-      <div id="tuesday" class="day" onselectstart="return false">Tue</div>
-      <div id="wednesday" class="day" onselectstart="return false">Wed</div>
-      <div id="thursday" class="day" onselectstart="return false">Thur</div>
-      <div id="friday" class="day" onselectstart="return false">Fri</div>
-      <div id="saturday" class="day" onselectstart="return false">Sat</div>
+    <div>
+      <form id="purchase-form">
+        <input type="text" hidden="true" required="true" name="product">
+        <input type="number" hidden="true" required="true" name="timeslot">
+        <input type="text" placeholder="Discord-tag#000" name="discord-tag" required="true">
+        <input type="email" placeholder="email@example.com" name="email" required="true">
+        <input  type="submit" value="Purchase" name="submit">
+      </form>
     </div>
   </div>
 
